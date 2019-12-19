@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Configuración básica de WordPress.
  *
@@ -71,12 +72,14 @@ $table_prefix = 'wp_';
  */
 define('WP_DEBUG', false);
 
+/* Se requiere con docker para la instalacion de temas y plugins */
+define('FS_METHOD', 'direct');
+
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 
 /** WordPress absolute path to the Wordpress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if (!defined('ABSPATH'))
+    define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
